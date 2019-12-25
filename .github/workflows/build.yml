@@ -1,0 +1,24 @@
+name: Build
+on: push
+jobs:
+  send-qt:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: pip install -r requirements/common.txt -r requirements/qt.txt -r requirements/build.txt
+      - name: Build standalone executable using PyInstaller
+        run: pyinstaller hpos_seed/send_qt.spec
+      - uses: actions/upload-artifact@v1
+        with:
+          name: hpos-seed-send-qt-${{ matrix.os }}-${{ github.sha }}
+          path: dist

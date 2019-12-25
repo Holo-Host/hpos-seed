@@ -1,0 +1,1 @@
+https://github.com/pyinstaller/pyinstaller/archive/9dd34bdfbaeaa4e0459bd3051d1caf0c7d75073f.zip
