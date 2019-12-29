@@ -5,7 +5,7 @@ import wormhole
 
 ACK_MESSAGE = b'ack'
 APP_ID = 'holo.host/hpos-seed/v1'
-DEFAULT_RELAY_URL = 'ws://relay.magic-wormhole.io:4000/v1'
+DEFAULT_RELAY_URL = 'ws://wormhole-relay.holo.host:4000/v1'
 
 
 def _relay_url():
