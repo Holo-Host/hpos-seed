@@ -39,7 +39,7 @@ let
     };
   };
 
-  hpos-seed = buildPythonApplication {
+  hpos-seed = buildPythonPackage {
     name = "hpos-seed";
     src = lib.cleanSource ./.;
 
